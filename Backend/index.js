@@ -90,6 +90,34 @@ app.get('/',(req,res)=>{
         alrevez: invertido
     })
 })
+/**
+ * Peticion POTENCIA
+ */
+ 
+ app.get('/potencia/:numero', (req, res) => {
+    number = req.params.numero
+ 
+    result = Number(number)**3
+ 
+    res.json({
+        potencia: result
+    })
+})
+ 
+/**
+ * Peticion RAIZ
+ */
+ 
+app.get('/raiz/:numero', (req, res) => {
+    number = req.params.numero
+ 
+    raiz = (Number(number))**(1/3)
+ 
+    res.json({
+        raiz: raiz
+    })
+});
+
  
 
 app.listen(port,()=> console.log(`Escuchando en el puerto: ${port}`));
