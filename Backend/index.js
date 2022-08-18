@@ -77,4 +77,19 @@ app.get('/',(req,res)=>{
     res.send({Fibonnaci: result})    
 });
 
+/**
+ * Peticion ALREVEZ
+ */
+ 
+ app.get('/alrevez/:palabra', (req, res) => {
+    palabra = req.params.palabra
+ 
+    invertido = invertirCadena(palabra)
+ 
+    res.json({
+        alrevez: invertido
+    })
+})
+ 
+
 app.listen(port,()=> console.log(`Escuchando en el puerto: ${port}`));
