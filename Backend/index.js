@@ -147,9 +147,14 @@ app.get('/multiplicacion/:numero1/:numero2',(req,res)=>{
  app.get('/division/:numero1/:numero2',(req,res)=>{
     const num = req.params.numero1;
     const num1 = req.params.numero2
-    
+    let result='';
+    if(num1 == 0){
+        result = 'error, no se puede dividir entre cero';
+    }else{
+        result = (num/num1);
+    }
     res.send({
-        multiplicacion : (num/num1)
+        multiplicacion : result
     });
 });
  
