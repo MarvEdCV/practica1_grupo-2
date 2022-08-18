@@ -65,7 +65,7 @@ $(document).ready(function(){
         let palabra = document.form1.Palabra.value;
 
         getData('http://localhost:3000/alrevez/',palabra,null).then(res => {
-            document.form1.res3.value=res.alrevez;
+            document.form1.res3.value=`${res.alrevez}     Autor: ${res.dev}`;
         })
     });
 
