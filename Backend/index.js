@@ -32,5 +32,21 @@ app.get('/',(req,res)=>{
     ];
     res.send(devs);
 });
+/**
+ * Petición 2 - NUMERO PAR O IMPAR
+ */
+ app.get('/PAROIMPAR/:numero',(req,res)=>{
+    const num = req.params.numero;
+    let isPar;
+    if(num%2 == 0){
+        isPar = true;
+    }
+    else{
+        isPar = false;
+    }
+    res.send({
+        par : isPar
+    });
+});
 
 app.listen(port,()=> console.log(`Escuchando en el puerto: ${port}`));
