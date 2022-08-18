@@ -55,7 +55,7 @@ $(document).ready(function(){
         let numero1 = document.form1.numero2.value;
 
         getData('http://localhost:3000/fibo/',numero1,null).then(res => {
-            document.form1.res2.value=res.Fibonnaci;
+            document.form1.res2.value=`${res.Fibonnaci} hecho por: ${res.dev}`;
         })
     });
     
