@@ -118,6 +118,33 @@ app.get('/raiz/:numero', (req, res) => {
     })
 });
 
+
+ /**
+ * Peticion Multiplicacion
+ */
+app.get('/multiplicacion/:numero1/:numero2',(req,res)=>{
+    const num = req.params.numero1;
+    const num1 = req.params.numero2
+    
+    res.send({
+        multiplicacion : (num*num1)
+    });
+});
+
+/**
+ * Peticion 8
+ */
+ app.get('/division/:numero1/:numero2',(req,res)=>{
+    const num = req.params.numero1;
+    const num1 = req.params.numero2
+    
+    res.send({
+        multiplicacion : (num/num1)
+    });
+});
  
+function invertirCadena(cad) {
+    return cad.split("").reverse().join("");
+}
 
 app.listen(port,()=> console.log(`Escuchando en el puerto: ${port}`));
