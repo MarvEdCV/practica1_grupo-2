@@ -24,7 +24,7 @@ $(document).ready(function(){
                 let desarrollador = res[i];
                 const $tr = document.createElement("tr");
                 let $tdNombre = document.createElement("td");
-                $tdNombre.textContent = desarrollador.nombre; 
+                $tdNombre.textContent = `${desarrollador.nombre} edad: ${desarrollador.edad}`; 
                 $tr.appendChild($tdNombre);
                 let $tdCarne = document.createElement("td");
                 $tdCarne.textContent = desarrollador.dev;
@@ -55,7 +55,7 @@ $(document).ready(function(){
         let numero1 = document.form1.numero2.value;
 
         getData('http://localhost:3000/fibo/',numero1,null).then(res => {
-            document.form1.res2.value=res.Fibonnaci;
+            document.form1.res2.value=`${res.Fibonnaci} hecho por: ${res.dev}`;
         })
     });
     
@@ -65,7 +65,7 @@ $(document).ready(function(){
         let palabra = document.form1.Palabra.value;
 
         getData('http://localhost:3000/alrevez/',palabra,null).then(res => {
-            document.form1.res3.value=res.alrevez;
+            document.form1.res3.value=`${res.alrevez}     Autor: ${res.dev}`;
         })
     });
 
@@ -75,7 +75,8 @@ $(document).ready(function(){
         let numero1 = document.form1.numero3.value;
 
         getData('http://localhost:3000/potencia/',numero1,null).then(res => {
-            document.form1.res4.value=res.potencia;
+            document.form1.res4.value=`${res.potencia} hecho por: ${res.dev}`;
+            
         })
     });
 
@@ -84,7 +85,7 @@ $(document).ready(function(){
     btnRaiz.click(function (){
         let numero1 = document.form1.numero3.value;
         getData('http://localhost:3000/raiz/',numero1,null).then(res => {
-            document.form1.res4.value=res.raiz;
+            document.form1.res4.value=`${res.raiz} hecho por: ${res.dev}`;
         })
     });
 

@@ -15,19 +15,23 @@ app.get('/',(req,res)=>{
     const devs = [
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Marvin Eduardo Catalán Véliz - 201905554 - Práctica 1 - Grupo #2'
+        dev: 'Marvin Eduardo Catalán Véliz - 201905554 - Práctica 1 - Grupo #2',
+        edad:21
         },
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Diego Fernando Cortez Lopez - 201900955 - Práctica 1 - Grupo #2'
+        dev: 'Diego Fernando Cortez Lopez - 201900955 - Práctica 1 - Grupo #2',
+        edad:22
         },
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Julio José Orellana Ruíz - 201908120 - Práctica 1 - Grupo #2'
+        dev: 'Julio José Orellana Ruíz - 201908120 - Práctica 1 - Grupo #2',
+        edad:21
         },
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Sara Paulina Medrano Cojulún - 201908053 - Práctica 1 - Grupo #2'
+        dev: 'Sara Paulina Medrano Cojulún - 201908053 - Práctica 1 - Grupo #2',
+        edad:21
         }
     ];
     res.send(devs);
@@ -74,7 +78,10 @@ app.get('/',(req,res)=>{
  
     var result = GenerateFibonacci(number)
    
-    res.send({Fibonnaci: result})    
+    res.send({
+        Fibonnaci: result,
+        dev: "Diego Fernando Cortez Lopez - 201900955"
+    })    
 });
 
 /**
@@ -87,7 +94,8 @@ app.get('/',(req,res)=>{
     invertido = invertirCadena(palabra)
  
     res.json({
-        alrevez: invertido
+        alrevez: invertido,
+        dev: "Julio Jose Orellana - 201908120"
     })
 })
 /**
@@ -100,7 +108,8 @@ app.get('/',(req,res)=>{
     result = Number(number)**3
  
     res.json({
-        potencia: result
+        potencia: result,
+        dev: "Sara Paulina Medrano Cojulun - 201908053"
     })
 })
  
@@ -114,7 +123,8 @@ app.get('/raiz/:numero', (req, res) => {
     raiz = (Number(number))**(1/3)
  
     res.json({
-        raiz: raiz
+        raiz: raiz,
+        dev: "Sara Paulina Medrano Cojulun - 201908053"
     })
 });
 
