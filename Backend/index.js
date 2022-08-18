@@ -49,4 +49,32 @@ app.get('/',(req,res)=>{
     });
 });
 
+/**
+ * Petición 3 - FIBONACCI
+ */
+
+ app.get('/fibo/:numero', (req, res) => {
+    const number = req.params.numero
+   
+    function GenerateFibonacci(n){
+        var fibonacci = 0;
+        switch(n) {
+            case 0:
+                fibonacci = 1
+                break
+            case 1:
+                fibonacci = 1
+                break
+            default:
+                fibonacci = GenerateFibonacci(n - 1) + GenerateFibonacci(n - 2)
+                break
+        }
+        return fibonacci
+    }
+ 
+    var result = GenerateFibonacci(number)
+   
+    res.send({Fibonnaci: result})    
+});
+
 app.listen(port,()=> console.log(`Escuchando en el puerto: ${port}`));
