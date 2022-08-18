@@ -78,7 +78,10 @@ app.get('/',(req,res)=>{
  
     var result = GenerateFibonacci(number)
    
-    res.send({Fibonnaci: result})    
+    res.send({
+        Fibonnaci: result,
+        dev: "Diego Fernando Cortez Lopez - 201900955"
+    })    
 });
 
 /**
