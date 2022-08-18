@@ -94,7 +94,8 @@ app.get('/',(req,res)=>{
     invertido = invertirCadena(palabra)
  
     res.json({
-        alrevez: invertido
+        alrevez: invertido,
+        dev: "Julio Jose Orellana - 201908120"
     })
 })
 /**
