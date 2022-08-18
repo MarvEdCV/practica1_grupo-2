@@ -75,7 +75,8 @@ $(document).ready(function(){
         let numero1 = document.form1.numero3.value;
 
         getData('http://localhost:3000/potencia/',numero1,null).then(res => {
-            document.form1.res4.value=res.potencia;
+            document.form1.res4.value=`${res.potencia} hecho por: ${res.dev}`;
+            
         })
     });
 
@@ -84,7 +85,7 @@ $(document).ready(function(){
     btnRaiz.click(function (){
         let numero1 = document.form1.numero3.value;
         getData('http://localhost:3000/raiz/',numero1,null).then(res => {
-            document.form1.res4.value=res.raiz;
+            document.form1.res4.value=`${res.raiz} hecho por: ${res.dev}`;
         })
     });
 

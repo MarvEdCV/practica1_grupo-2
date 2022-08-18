@@ -108,7 +108,8 @@ app.get('/',(req,res)=>{
     result = Number(number)**3
  
     res.json({
-        potencia: result
+        potencia: result,
+        dev: "Sara Paulina Medrano Cojulun - 201908053"
     })
 })
  
@@ -122,7 +123,8 @@ app.get('/raiz/:numero', (req, res) => {
     raiz = (Number(number))**(1/3)
  
     res.json({
-        raiz: raiz
+        raiz: raiz,
+        dev: "Sara Paulina Medrano Cojulun - 201908053"
     })
 });
 
