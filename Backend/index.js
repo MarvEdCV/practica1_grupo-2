@@ -77,4 +77,58 @@ app.get('/',(req,res)=>{
     res.send({Fibonnaci: result})    
 });
 
+/**
+ * Peticion ALREVEZ
+ */
+ 
+ app.get('/alrevez/:palabra', (req, res) => {
+    palabra = req.params.palabra
+ 
+    invertido = invertirCadena(palabra)
+ 
+    res.json({
+        alrevez: invertido
+    })
+})
+/**
+ * Peticion POTENCIA
+ */
+ 
+ app.get('/potencia/:numero', (req, res) => {
+    number = req.params.numero
+ 
+    result = Number(number)**3
+ 
+    res.json({
+        potencia: result
+    })
+})
+ 
+/**
+ * Peticion RAIZ
+ */
+ 
+app.get('/raiz/:numero', (req, res) => {
+    number = req.params.numero
+ 
+    raiz = (Number(number))**(1/3)
+ 
+    res.json({
+        raiz: raiz
+    })
+});
+
+
+ /**
+ * Peticion Multiplicacion
+ */
+app.get('/multiplicacion/:numero1/:numero2',(req,res)=>{
+    const num = req.params.numero1;
+    const num1 = req.params.numero2
+    
+    res.send({
+        multiplicacion : (num*num1)
+    });
+});
+
 app.listen(port,()=> console.log(`Escuchando en el puerto: ${port}`));
