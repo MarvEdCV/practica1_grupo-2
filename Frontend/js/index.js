@@ -24,7 +24,7 @@ $(document).ready(function(){
                 let desarrollador = res[i];
                 const $tr = document.createElement("tr");
                 let $tdNombre = document.createElement("td");
-                $tdNombre.textContent = desarrollador.nombre; 
+                $tdNombre.textContent = `${desarrollador.nombre} edad: ${desarrollador.edad}`; 
                 $tr.appendChild($tdNombre);
                 let $tdCarne = document.createElement("td");
                 $tdCarne.textContent = desarrollador.dev;

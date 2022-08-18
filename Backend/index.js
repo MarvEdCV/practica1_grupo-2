@@ -15,19 +15,23 @@ app.get('/',(req,res)=>{
     const devs = [
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Marvin Eduardo Catalán Véliz - 201905554 - Práctica 1 - Grupo #2'
+        dev: 'Marvin Eduardo Catalán Véliz - 201905554 - Práctica 1 - Grupo #2',
+        edad:21
         },
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Diego Fernando Cortez Lopez - 201900955 - Práctica 1 - Grupo #2'
+        dev: 'Diego Fernando Cortez Lopez - 201900955 - Práctica 1 - Grupo #2',
+        edad:22
         },
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Julio José Orellana Ruíz - 201908120 - Práctica 1 - Grupo #2'
+        dev: 'Julio José Orellana Ruíz - 201908120 - Práctica 1 - Grupo #2',
+        edad:21
         },
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Sara Paulina Medrano Cojulún - 201908053 - Práctica 1 - Grupo #2'
+        dev: 'Sara Paulina Medrano Cojulún - 201908053 - Práctica 1 - Grupo #2',
+        edad:21
         }
     ];
     res.send(devs);
