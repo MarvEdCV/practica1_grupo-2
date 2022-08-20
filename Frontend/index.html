@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title>Practica 1 AYD1</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Practica 1 AYD1</a>
+        <a class="navbar-brand" href="#"><input type="button" class="btn btn-secondary" id="btn-devs" value="Desarrolladores"></a>
+        
+    </nav>
+    <div style="width: 100%; height: 100%;">
+        <div style="width: 100%; height: 20%;">
+            <table class="table table-striped" >
+                <thead>
+                    <tr style="align-items: center;">
+                        <th>Nombre</th>
+                        <th>Desarrollador</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+    
+                </tbody>
+    
+            </table>
+        </div>
+        <div style="width: 100%; height: 80%;">
+            <form name="form1" >
+            <table style="width: 100%; background-color:#F2F4F4 ; height: 80%;">
+                <tr>
+                    <td colspan="2"><hr size="10px" color="black" /></td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;" align="center">
+                       <div><h3>Par/Impar</h3></div>
+                       <div><input  style="padding-top: 1%; border-radius: 5px; width: 80%;" type="text" name="Numero1" id="numero1" value="" placeholder="Ingrese el número"></div>
+                       <div style="padding-top: 1%;"><input style=" border-radius: 5px; width: 80%;" type="text" name="resultado1" id="res1" placeholder="Resultado" value=""></div>
+                       <div style="align-items: center; padding-top: 1%;"><input type="button" class="btn btn-dark" value="verificar" id="btn-par"></div>
+                       
+                    </td>
+                    <td style="width: 50%;" align="center">
+                        <div><h3>Fibonnacci</h3></div>
+                       <div><input  style="padding-top: 1%; border-radius: 5px; width: 80%;" type="text" name="Numero2" id="numero2" value="" placeholder="Ingrese el número"></div>
+                       <div style="padding-top: 1%;"><input style=" border-radius: 5px; width: 80%;" type="text" name="resultado2" id="res2" placeholder="Resultado" value=""></div>
+                       <div style="align-items: center; padding-top: 1%;"><input type="button" class="btn btn-dark" value="Calcular" id="btn-fibonacci"></div>
+                    </td>
+                </tr>
+                <tr>
+                <td colspan="2"><hr size="10px" color="black" /></td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 50%;" align="center">
+                        <div><h3>Palabra Alrevez</h3></div>
+                        <div><input  style="padding-top: 1%; border-radius: 5px; width: 80%;" type="text" name="Palabra" id="Palabra" value="" placeholder="Ingrese la palabra"></div>
+                        <div style="padding-top: 1%;"><input style=" border-radius: 5px; width: 80%;" type="text" name="resultado3" id="res3" placeholder="Resultado" value=""></div>
+                        <div style="align-items: center; padding-top: 1%;"><input type="button" class="btn btn-dark" value="verificar" id="btn-alrevez"></div>
+                        
+                        
+                     </td>
+                     <td style="width: 50%;" align="center">
+                        <div><h3>Cubo / Raiz</h3></div>
+                        <div><input  style="padding-top: 1%; border-radius: 5px; width: 80%;" type="text" name="Numero3" id="numero3" value="" placeholder="Ingrese el número"></div>
+                        <div style="padding-top: 1%;"><input style=" border-radius: 5px; width: 80%;" type="text" name="resultador4" id="res4" placeholder="Resultado4" value=""></div>
+                        <div style="align-items: center; padding-top: 1%;">
+                            <input type="button" class="btn btn-dark" value="Cubo" id="btn-potencia">
+                            <input type="button" class="btn btn-dark" value="Raíz" id="btn-raiz">
+                        </div>
+                        
+                     </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><hr size="10px" color="black" /></td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;" align="center">
+                        <div><h3>Multiplicación</h3></div>
+                        <div><input  style="padding-top: 1%; border-radius: 5px; width: 80%;" type="text" name="numero41" id="num41" value="" placeholder="Ingrese el primer numero"></div>
+                        <div><input  style="padding-top: 1%; border-radius: 5px; width: 80%;" type="text" name="numero42" id="num42" value="" placeholder="Ingrese el segundo numero"></div>
+                        <div style="padding-top: 1%;"><input style=" border-radius: 5px; width: 80%;" type="text" name="resultado5" id="res5" placeholder="Resultado" value=""></div>
+                        <div style="align-items: center; padding-top: 1%;"><input type="button" class="btn btn-dark" value="Multiplicar" id="btn-multiplicacion"></div>
+                        
+                        
+                     </td>
+                     <td style="width: 50%;" align="center">
+                        <div><h3>División</h3></div>
+                        <div><input  style="padding-top: 1%; border-radius: 5px; width: 80%;" type="text" name="numero51" id="num51" value="" placeholder="Ingrese el primer numero"></div>
+                        <div><input  style="padding-top: 1%; border-radius: 5px; width: 80%;" type="text" name="numero52" id="num52" value="" placeholder="Ingrese el segundo numero"></div>
+                        <div style="padding-top: 1%;"><input style=" border-radius: 5px; width: 80%;" type="text" name="resultado6" id="res6" placeholder="Resultado" value=""></div>
+                        <div style="align-items: center; padding-top: 1%;"><input type="button" class="btn btn-dark" value="Dividir" id="btn-division"></div>
+                        
+                        
+                     </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        
+        
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

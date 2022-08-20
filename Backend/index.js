@@ -15,19 +15,23 @@ app.get('/',(req,res)=>{
     const devs = [
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Marvin Eduardo Catalán Véliz - 201905554 - Práctica 1 - Grupo #2'
+        dev: 'Marvin Eduardo Catalán Véliz - 201905554 - Práctica 1 - Grupo #2',
+        edad:21
         },
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Diego Fernando Cortez Lopez - 201900955 - Práctica 1 - Grupo #2'
+        dev: 'Diego Fernando Cortez Lopez - 201900955 - Práctica 1 - Grupo #2',
+        edad:22
         },
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Julio José Orellana Ruíz - 201908120 - Práctica 1 - Grupo #2'
+        dev: 'Julio José Orellana Ruíz - 201908120 - Práctica 1 - Grupo #2',
+        edad:21
         },
         {
         nombre: 'Analisis y Diseño 1',
-        dev: 'Sara Paulina Medrano Cojulún - 201908053 - Práctica 1 - Grupo #2'
+        dev: 'Sara Paulina Medrano Cojulún - 201908053 - Práctica 1 - Grupo #2',
+        edad:21
         }
     ];
     res.send(devs);
@@ -48,5 +52,114 @@ app.get('/',(req,res)=>{
         par : isPar
     });
 });
+
+/**
+ * Petición 3 - FIBONACCI
+ */
+
+ app.get('/fibo/:numero', (req, res) => {
+    const number = req.params.numero
+   
+    function GenerateFibonacci(n){
+        var fibonacci = 0;
+        switch(n) {
+            case 0:
+                fibonacci = 1
+                break
+            case 1:
+                fibonacci = 1
+                break
+            default:
+                fibonacci = GenerateFibonacci(n - 1) + GenerateFibonacci(n - 2)
+                break
+        }
+        return fibonacci
+    }
+ 
+    var result = GenerateFibonacci(number)
+   
+    res.send({
+        Fibonnaci: result,
+        dev: "Diego Fernando Cortez Lopez - 201900955"
+    })    
+});
+
+/**
+ * Peticion ALREVEZ
+ */
+ 
+ app.get('/alrevez/:palabra', (req, res) => {
+    palabra = req.params.palabra
+ 
+    invertido = invertirCadena(palabra)
+ 
+    res.json({
+        alrevez: invertido,
+        dev: "Julio Jose Orellana - 201908120"
+    })
+})
+/**
+ * Peticion POTENCIA
+ */
+ 
+ app.get('/potencia/:numero', (req, res) => {
+    number = req.params.numero
+ 
+    result = Number(number)**3
+ 
+    res.json({
+        potencia: result,
+        dev: "Sara Paulina Medrano Cojulun - 201908053"
+    })
+})
+ 
+/**
+ * Peticion RAIZ
+ */
+ 
+app.get('/raiz/:numero', (req, res) => {
+    number = req.params.numero
+ 
+    raiz = (Number(number))**(1/3)
+ 
+    res.json({
+        raiz: raiz,
+        dev: "Sara Paulina Medrano Cojulun - 201908053"
+    })
+});
+
+
+ /**
+ * Peticion Multiplicacion
+ */
+app.get('/multiplicacion/:numero1/:numero2',(req,res)=>{
+    const num = req.params.numero1;
+    const num1 = req.params.numero2
+    
+    res.send({
+        multiplicacion : (num*num1)
+    });
+});
+
+/**
+ * Peticion 8
+ */
+ app.get('/division/:numero1/:numero2',(req,res)=>{
+    const num = req.params.numero1;
+    const num1 = req.params.numero2
+    let result='';
+    if(num1 == 0){
+        result = 'error, no se puede dividir entre cero';
+    }else{
+        result = (num/num1);
+    }
+    res.send({
+        multiplicacion : result
+    });
+});
+ 
+function invertirCadena(cad) {
+    return cad.split("").reverse().join("");
+}
 
 app.listen(port,()=> console.log(`Escuchando en el puerto: ${port}`));
